@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+  <title> Bài tập TH02 </title>
+  <link rel="stylesheet" href="/style.css" /> 
+  </head>
+  <body>
+    <h2><font color="red">Bài 1.</font><font color="Black">Cơ bản</font></h2>
+   <center>
+     <h2> GIẢI PHƯƠNG TRÌNH BẬC 1 </h2> 
+
+  <div>
+    <input type="number" id="inputA" placeholder="Nhập a">
+    </div>
+   
+  <div>
+    <input type="number" id="inputB" placeholder="Nhập b">
+    </div>
+     <button onclick="giaiPhuongTrinh()" style="padding: 10px;width:20%;background-color: #FF6699; color: #fff;">Giải phương trình</button>
+
+    <div id="result"></div>
+<script>
+        function giaiPhuongTrinh() {
+            var a = document.getElementById("inputA").value;
+            var b = document.getElementById("inputB").value;
+
+            if (a === "" || b === "") {
+                alert("Vui lòng nhập đầy đủ thông tin.");
+                return;
+            }
+
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            if (isNaN(a) || isNaN(b)) {
+                alert("Vui lòng nhập số hợp lệ.");
+                return;
+            }
+
+            if (a === 0) {
+                document.getElementById("result").innerHTML = "Phương trình không phải là phương trình bậc 1.";
+            } else {
+                var x = -b / a;
+                document.getElementById("result").innerHTML = "Nghiệm của phương trình là: x = " + x;
+            }
+        }
+     </script> 
+     
+    </center>
+    <h3>
+   Bài 2. </h3> 
+    <center>
+    <p>
+      <span class="contribution-guidelines">
+     Góp ý của bạn sẽ được chúng tôi xem xét, vui lòng nhập tiếng Việt có dấu
+      </span>
+    <Br> 
+  Các ý kiến đóng góp nên viết chi tiết rõ ràng,kèm theo các minh chứng xác thực thời gian và địa điểm (nếu có)
+    </p>
+<h2> Đóng Góp Ý Kiến Về Sản Phẩm</h2>
+    
+<form action="#" method="post">
+        <label for="hoTen">Họ và Tên:</label>
+        <input type="text" id="hoTen" name="hoTen" required>
+
+        <label for="maThe">Mã Thẻ:</label>
+        <input type="text" id="maThe" name="maThe" required>
+
+        <label for="soDienThoai">Số Điện Thoại:</label>
+        <input type="tel" id="soDienThoai" name="soDienThoai" required>
+  <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="loaiKhachHang">Loại Khách Hàng:</label>
+        <select id="loaiKhachHang" name="loaiKhachHang">
+            <option value="vip">VIP</option>
+            <option value="thuong">Thường</option>
+            <option value="moi">Mới</option>
+        </select>
+  <br>
+        <label for="maHoaDon">Mã Hóa Đơn:</label>
+        <input type="text" id="maHoaDon" name="maHoaDon">
+
+        <label for="moTa">Chi Tiết Mô Tả:</label>
+        <textarea id="moTa" name="moTa" rows="4" required></textarea>
+
+        <button type="submit" style="background-color:#CC66FF;color:#fff";>Gửi góp ý</button>
+    </form>
+    </center>
+    
+<h3>
+  Bài 3
+    </h3>
+     <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+  }
+  body {
+    color: Black;
+    font-family: Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px 0 #ddd inset;
+    
+    box-sizing: border-box;
+    font-size: 15px;
+    padding-left: 20px;
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="email"] {
+    height: 40px;
+  }
+  textarea {
+    font-family: Helvetica,sans-serif;
+    padding-top: 10px;
+  }
+  button {
+    background-color: #CCFF00;
+    border: 1px solid #CCFF00;
+    color: white;
+    cursor: pointer;
+    min-width: 135px;
+    padding: 11px 10px;
+    text-align: center;
+    transition: 0.3s background-color;
+  }
+  button:hover {
+    background-color: red;
+  }
+  .clearfix {
+    zoom: 1;
+  }
+  .clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
+  
+  /* Layout */
+  .contact-us {
+    margin: 30px auto;
+    width: 1140px;
+  }
+  .contact-us .info {
+    float: left;
+    width: 380px;
+  }
+  .contact-us h2 {
+    color: red;
+    font-size: 29px;
+    font-weight: 500;
+    margin-bottom: 42px;
+    position: relative;
+  }
+  /* Line cho h2 */
+  .contact-us h2:after {
+    background-color: red;
+    bottom: -5px;
+    content: "";
+    display: block;
+    left: 0;
+    height: 3px;
+    width: 10000px;
+    position: absolute;
+  }
+  .contact-us h3 {
+    color: #222;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  .contact-us .contact-list li {
+    line-height: 1.4;
+    margin-bottom: 36px;
+    padding-left: 48px;
+    position: relative;
+  }
+  .contact-us .contact-list li i {
+    font-size: 27px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    width: 34px;
+  }
+  .contact-us .contact-list li a {
+    color: #9a9a9a;
+    text-decoration: none;
+  }
+  .contact-us .contact-form {
+    float: right;
+    width: 750px;
+  }
+  .contact-us .contact-form p {
+    margin-bottom: 15px;
+  }
+  .contact-us .contact-form .submit-btn {
+    margin-top: -10px;
+  }
+  .contact-us .contact-form textarea {
+    height: 114px;
+  }
+ </style>
+<body>
+  <section class="contact-us">
+    <h2><font color="#0000FF">LIÊN HỆ</font></h2>
+    <div class="clearfix">
+      <div class="info">
+        <h3>Thông tin</h3>
+        <ul class="contact-list">
+          <li><i class="fas fa-map-marker-alt"></i> Thủ Đức, TPHCM </li>
+          <li><i class="far fa-envelope"></i> thanhvan42@gmail.com</li>
+          <li><i class="fas fa-phone-alt"></i> <a href="tel:+84 2814567">0704618042</a></li>
+        </ul>
+      </div>
+
+      <div class="contact-form">
+        <h3><font color="puprle">Hãy liên lạc với chúng tôi bất cứ khi nào</font></h3>
+        <form method="" action="">
+          <p><input type="text" name="name" placeholder="Họ và tên" value=""></p>
+          <p><input type="email" name="email" placeholder="Địa chỉ Mail" value=""></p>
+          <p><input type="text" name="subject" placeholder="Tiêu đề bài viết" value=""></p>
+          <p><textarea name="message" placeholder="Nội dung cần gửi" cols="50" rows="10"></textarea></p>
+          <p class="submit-btn"><button type="submit" style="background-color:#3300FF;color:#fff">Gửi tin nhắn</button></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+<h3>
+  Bài4
+    </h3>
+    <center>
+     <h2>Tính chỉ số BMI</h2>
+
+    <form id="bmiForm">
+        <label for="weight">Cân Nặng (kg):</label>
+        <input type="number" id="weight" required>
+  <br>
+        <label for="height">Chiều Cao (m):</label>
+        <input type="number" id="height" required>
+  <br>
+        <label for="age">Tuổi:</label>
+        <input type="number" id="age" required>
+
+        <button type="button" onclick="calculateBMI()" style="background-color:#33FFCC;color:#fff">Tính BMI</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function calculateBMI() {
+            // Lấy giá trị từ các ô input
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            var age = parseInt(document.getElementById("age").value);
+
+            // Kiểm tra tính hợp lệ của dữ liệu
+            if (isNaN(weight) || isNaN(height) || isNaN(age)) {
+                alert("Vui lòng nhập số hợp lệ.");
+                return;
+            }
+
+            // Tính chỉ số BMI
+            var bmi = weight / Math.pow(height, 2);
+
+            // Xác định phân loại BMI dựa trên tuổi
+            var category = "";
+            if (age < 18) {
+                category = "Phân loại BMI cho trẻ em";
+            } else {
+                if (bmi < 18.5) {
+                    category = "Thiếu cân";
+                } else if (bmi >= 18.5 && bmi < 25) {
+                    category = "Bình thường";
+                } else if (bmi >= 25 && bmi < 30) {
+                    category = "Thừa cân";
+                } else {
+                    category = "Béo phì";
+                }
+            }
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "Chỉ số BMI của bạn là: " + bmi.toFixed(2) + "<br>" + category;
+        }
+    </script>
+    </center>
+    
+<h3>
+  Bài 5.
+    </h3>
+    <center>
+    <style>
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 0px;
+            border-radius: 3px;
+            box-sizing: border-box;
+            background-color: white; /* Màu box */
+            display: block;
+            margin-bottom: 10px; 
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            
+            margin-right: 50px; /* Căng lề phải */
+        }
+        
+    </style>
+<body>
+    <form onsubmit="return show">
+        <h2>Login</h2>
+        <input type="text" id="fullName" name="fullName" placeholder="User Name" required>
+        <input type="password" id="Password" name="password" placeholder="Password" required>
+        <input type="submit" value="Đăng nhập">
+        
+        <script>
+            function showPasswordConfirmation() {
+                // Hiển thị cửa sổ xác nhận khi nhấp vào nút "Đăng nhập"
+                var isShowPassword = confirm("Bạn muốn hiện mật khẩu?");
+                
+                // Nếu người dùng chọn "OK", thay đổi kiểu ô mật khẩu thành "text"
+                if (isShowPassword) {
+                    document.getElementById("Password").type = "text";
+                }
+
+                // Nếu người dùng chọn "Cancel" hoặc đóng cửa sổ xác nhận, tiếp tục với việc submit biểu mẫu
+                return true;
+            }
+        </script>
+    </form>
+</body>
+    </center>
+ <h3>
+  Bài 6
+  </h3>
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: pink;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: red;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+<center>
+<h2>Login Form</h2>
+
+<form action="/action_page.php" method="post">
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit"style="background-color:#FF9999;color:#fff">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:white">
+    <button type="button" class="cancelbtn"style="Background-color:#FF9900;color:#fff">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+  </center>
+    </body>
+
+  </body>
+</html>
+  
+    
